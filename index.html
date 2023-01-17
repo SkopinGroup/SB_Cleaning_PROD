@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Steam & Brush Cleaning</title>
+		<meta
+			name="description"
+			content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+		/>
+        <script src="https://cdn.tailwindcss.com"></script>
+
+		<!-- JS Libraries -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+		  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+	  
+		<!-- Scripts -->
+		<script src="./Scripts/nav.js"></script>
+	</head>
+	<body class="flex h-full flex-col bg-zinc-50">
+		<div class="relative">
+			<header class="py-8 fixed w-screen bg-slate-50" style="z-index: 999;">
+				<div class="hidden sm:block mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<nav class="relative z-50 flex justify-between">
+						<div class="flex items-center md:gap-x-12">
+							<a aria-label="Home" href="/#">
+								<img class="w-16" src="./Assets/logo.jpg" alt="">
+							</a>
+							<div class="hidden md:flex md:gap-x-6">
+								<a class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#services">Services</a>
+								<a class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#about">Over ons</a>
+								<a class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#pricing">Tarieven</a>
+							</div>
+						</div>
+						<div class="flex items-center gap-x-5 md:gap-x-8">
+							<div class="hidden md:block">
+								<a class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="#faq">
+									Heeft u vragen?
+								</a>
+							</div>
+							<a
+								class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600"
+								href="#contact"
+							>
+								<span>Vraag een offerte aan</span>
+							</a>
+							<div class="-mr-1 md:hidden">
+								<div data-headlessui-state="">
+									<button
+										class="relative z-10 flex h-8 w-8 items-center justify-center [&amp;:not(:focus-visible)]:focus:outline-none"
+										aria-label="Toggle Navigation"
+										id="headlessui-popover-button-:R1p6:"
+										type="button"
+										aria-expanded="false"
+										data-headlessui-state=""
+									>
+										<svg aria-hidden="true" class="h-3.5 w-3.5 overflow-visible stroke-slate-700" fill="none" stroke-width="2" stroke-linecap="round">
+											<path d="M0 1H14M0 7H14M0 13H14" class="origin-center transition"></path>
+											<path d="M2 2L12 12M12 2L2 12" class="origin-center transition scale-90 opacity-0"></path>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+				<!-- Mobile nav -->
+				<div class="sm:hidden">
+					<nav id="navbar" class="flex glass-bg items-center justify-between flex-wrap py-6 fixed w-full top-0"
+					style="z-index: 999; padding-right: 5vw; padding-left: 5vw;" x-data="{ isOpen: false }"
+					@keydown.escape="isOpen = false" :class="{ 'shadow-lg bg-white' : isOpen , 'bg-none' : !isOpen}">
+					<!--Logo etc-->
+					<div class="flex items-center flex-shrink-0 text-white mr-6">
+					<a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+						<img src="./Assets/logo.jpg" alt="logo" class="w-12">
+					</a>
+					</div>
+
+					<svg @click="isOpen = !isOpen" type="button" :class="{ 'transition transform-180': isOpen }" class="active menu-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+					height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+					<path d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"></path>
+					</svg>
+
+					<!--Toggle button (hidden on large screens)-->
+
+					<!--Menu-->
+					<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
+					:class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show.transition="true">
+					<ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
+						<li class="mr-3">
+						<a class="inline-block text-gray-800 font-semibold no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
+							href="#" @click="isOpen = false">Home
+						</a>
+						</li>
+						<li class="mr-3">
+						<a class="inline-block text-gray-800 font-semibold no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
+							href="#services" @click="isOpen = false">Services
+						</a>
+						</li>
+						<li class="mr-3">
+						<a class="inline-block text-gray-800 font-semibold no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
+							href="#about" @click="isOpen = false">Over ons
+						</a>
+						</li>
+						<li class="mr-3">
+						<a class="inline-block text-gray-800 font-semibold no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
+							href="#pricing" @click="isOpen = false">Tarieven
+						</a>
+						</li>
+						<li class="mr-3">
+						<a class="inline-block text-gray-800 font-semibold no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
+							href="#faq" @click="isOpen = false">Veelgestelde vragen
+						</a>
+						</li>
+						<li class="mr-3 mt-4">
+						<a
+							class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600"
+							href="#contact"
+							@click="isOpen = false"
+						>
+							<span>Vraag een offerte aan</span>
+						</a>
+						</li>
+					</ul>
+					</div>
+				</nav>
+				</div>
+				<!-- Mobile nav -->
+			</header>			
+			<main class="pt-20">
+				<!-- WHATSAPP BTN -->
+				<a style="z-index: 999" href="https://api.whatsapp.com/send?phone=+31624156396" target="_blank" class="fixed left-4 bottom-4 bg-green-500 p-4 rounded-full flex items-center justify-center">
+					<svg class="text-white text-4xl" stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+					   <path d="M13.641 2.325c-1.497-1.5-3.488-2.325-5.609-2.325-4.369 0-7.925 3.556-7.925 7.928 0 1.397 0.366 2.763 1.059 3.963l-1.125 4.109 4.203-1.103c1.159 0.631 2.463 0.966 3.787 0.966h0.003c0 0 0 0 0 0 4.369 0 7.928-3.556 7.928-7.928 0-2.119-0.825-4.109-2.322-5.609zM8.034 14.525v0c-1.184 0-2.344-0.319-3.356-0.919l-0.241-0.144-2.494 0.653 0.666-2.431-0.156-0.25c-0.663-1.047-1.009-2.259-1.009-3.506 0-3.634 2.956-6.591 6.594-6.591 1.759 0 3.416 0.688 4.659 1.931 1.244 1.247 1.928 2.9 1.928 4.662-0.003 3.637-2.959 6.594-6.591 6.594zM11.647 9.588c-0.197-0.1-1.172-0.578-1.353-0.644s-0.313-0.1-0.447 0.1c-0.131 0.197-0.512 0.644-0.628 0.778-0.116 0.131-0.231 0.15-0.428 0.050s-0.838-0.309-1.594-0.984c-0.588-0.525-0.987-1.175-1.103-1.372s-0.013-0.306 0.088-0.403c0.091-0.088 0.197-0.231 0.297-0.347s0.131-0.197 0.197-0.331c0.066-0.131 0.034-0.247-0.016-0.347s-0.447-1.075-0.609-1.472c-0.159-0.388-0.325-0.334-0.447-0.341-0.116-0.006-0.247-0.006-0.378-0.006s-0.347 0.050-0.528 0.247c-0.181 0.197-0.694 0.678-0.694 1.653s0.709 1.916 0.809 2.050c0.1 0.131 1.397 2.134 3.384 2.991 0.472 0.203 0.841 0.325 1.128 0.419 0.475 0.15 0.906 0.128 1.247 0.078 0.381-0.056 1.172-0.478 1.338-0.941s0.166-0.859 0.116-0.941c-0.047-0.088-0.178-0.137-0.378-0.238z"></path>
+					</svg>
+				 </a>
+				 <!-- WHATSAPP BTN -->
+				<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center pt-12 sm:pt-0 lg:pt-24">
+					<h1 class="mx-auto max-w-5xl font-display text-3xl sm:text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+						Diepte reiniging op locatie
+						<span class="relative whitespace-nowrap text-blue-600">
+							<svg aria-hidden="true" viewBox="0 0 418 42" class="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70" preserveAspectRatio="none">
+								<path
+									d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"
+								></path>
+							</svg>
+							<span class="relative">Steam and Brush Cleaning</span>
+						</span>
+					</h1>
+					<p class="mx-auto mt-8 max-w-2xl text-sm sm:text-lg tracking-tight text-slate-700">
+						Auto exterieur (handwash) & interieur en dieptereiniging van uw autobekleding meubels en tapijten met een ultrakorte droogtijd.
+						Wij doen 1 stap polijsten, waxen, brengen coatings aan en verwijderen lichte krassen op afspraak ✌️
+					</p>
+					<div class="mt-10 flex justify-center gap-x-6">
+						<a
+							class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
+							href="#about"
+						>
+							Lees ons verhaal
+						</a>
+						<a
+							class="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300"
+							href="https://instagram.com/steam_and_brush"
+						>
+							<svg class="h-6 w-6 flex-none fill-blue-600 group-active:fill-current" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M512 306.9c-113.5 0-205.1 91.6-205.1 205.1S398.5 717.1 512 717.1 717.1 625.5 717.1 512 625.5 306.9 512 306.9zm0 338.4c-73.4 0-133.3-59.9-133.3-133.3S438.6 378.7 512 378.7 645.3 438.6 645.3 512 585.4 645.3 512 645.3zm213.5-394.6c-26.5 0-47.9 21.4-47.9 47.9s21.4 47.9 47.9 47.9 47.9-21.3 47.9-47.9a47.84 47.84 0 0 0-47.9-47.9zM911.8 512c0-55.2.5-109.9-2.6-165-3.1-64-17.7-120.8-64.5-167.6-46.9-46.9-103.6-61.4-167.6-64.5-55.2-3.1-109.9-2.6-165-2.6-55.2 0-109.9-.5-165 2.6-64 3.1-120.8 17.7-167.6 64.5C132.6 226.3 118.1 283 115 347c-3.1 55.2-2.6 109.9-2.6 165s-.5 109.9 2.6 165c3.1 64 17.7 120.8 64.5 167.6 46.9 46.9 103.6 61.4 167.6 64.5 55.2 3.1 109.9 2.6 165 2.6 55.2 0 109.9.5 165-2.6 64-3.1 120.8-17.7 167.6-64.5 46.9-46.9 61.4-103.6 64.5-167.6 3.2-55.1 2.6-109.8 2.6-165zm-88 235.8c-7.3 18.2-16.1 31.8-30.2 45.8-14.1 14.1-27.6 22.9-45.8 30.2C695.2 844.7 570.3 840 512 840c-58.3 0-183.3 4.7-235.9-16.1-18.2-7.3-31.8-16.1-45.8-30.2-14.1-14.1-22.9-27.6-30.2-45.8C179.3 695.2 184 570.3 184 512c0-58.3-4.7-183.3 16.1-235.9 7.3-18.2 16.1-31.8 30.2-45.8s27.6-22.9 45.8-30.2C328.7 179.3 453.7 184 512 184s183.3-4.7 235.9 16.1c18.2 7.3 31.8 16.1 45.8 30.2 14.1 14.1 22.9 27.6 30.2 45.8C844.7 328.7 840 453.7 840 512c0 58.3 4.7 183.2-16.2 235.8z"></path></svg>
+							<span class="ml-3">Volg ons op Instagram</span>
+						</a>
+					</div>
+				</div>
+				<div class="mt-16 sm:mt-20">
+					<div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
+							<img
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								src="./Assets/kwast_binnen.jpeg"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+							/>
+						</div>
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl -rotate-2">
+							<img
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								src="./Assets/schoon.jpeg"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+							/>
+							<video src="./Assets/lp_video.mp4"></video>
+						</div>
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
+							<video 
+								src="./Assets/lp_video.mp4"
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+								autoplay
+								muted
+								loop>
+							</video>
+						</div>
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
+							<img
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								src="./Assets/kwast.jpeg"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+							/>
+						</div>
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl -rotate-2">
+							<img
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								src="./Assets/cleaning-2022.jpeg"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+							/>
+						</div>
+					</div>
+				</div>
+				<section id="services" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 pt-40 pb-20 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+					<div>
+						<h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Diensten die wij met</h2>
+						<p class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">proffesionaliteit leveren</p>
+						<p class="mt-4 text-lg tracking-tight text-slate-700 sm:w-3/4 pb-8 sm:pb-0">
+							Wij bij SB Cleaning zijn door onze ervaring in het vak gespecialiseerd in meerdere diensten die wij
+							met volle vertrouwen kunnen verrichten.
+						</p>
+					</div>
+					<dl class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:grid-rows-4 sm:grid-flow-col sm:gap-x-6 sm:gap-y-10 lg:gap-x-8">
+						<div class="relative">
+						<dt>
+							<!-- Heroicon name: outline/check -->
+							<svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<p class="ml-9 text-lg leading-6 font-medium text-gray-900">Auto / Bus interieur</p>
+						</dt>
+						<!-- <dd class="mt-2 ml-9 text-base text-gray-500">You can manage phone, email and chat conversations all from a single mailbox.</dd> -->
+						</div>
+
+						<div class="relative">
+						<dt>
+							<!-- Heroicon name: outline/check -->
+							<svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<p class="ml-9 text-lg leading-6 font-medium text-gray-900">Meubiliair reininging</p>
+						</dt>
+						<!-- <dd class="mt-2 ml-9 text-base text-gray-500">You can manage phone, email and chat conversations all from a single mailbox.</dd> -->
+						</div>
+
+						<div class="relative">
+						<dt>
+							<!-- Heroicon name: outline/check -->
+							<svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<p class="ml-9 text-lg leading-6 font-medium text-gray-900">Geurbehandeling</p>
+						</dt>
+						<!-- <dd class="mt-2 ml-9 text-base text-gray-500">You can manage phone, email and chat conversations all from a single mailbox.</dd> -->
+						</div>
+
+						<div class="relative">
+						<dt>
+							<!-- Heroicon name: outline/check -->
+							<svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<p class="ml-9 text-lg leading-6 font-medium text-gray-900">Cabriokap reiniging</p>
+						</dt>
+						<!-- <dd class="mt-2 ml-9 text-base text-gray-500">You can manage phone, email and chat conversations all from a single mailbox.</dd> -->
+						</div>
+
+						<div class="relative">
+						<dt>
+							<!-- Heroicon name: outline/check -->
+							<svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<p class="ml-9 text-lg leading-6 font-medium text-gray-900">Leerbehandeling en reiniging</p>
+						</dt>
+						<!-- <dd class="mt-2 ml-9 text-base text-gray-500">Find what you need with advanced filters, bulk actions, and quick views.</dd> -->
+						</div>
+
+						<div class="relative">
+						<dt>
+							<!-- Heroicon name: outline/check -->
+							<svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<p class="ml-9 text-lg leading-6 font-medium text-gray-900">Camper reinigen</p>
+						</dt>
+						<!-- <dd class="mt-2 ml-9 text-base text-gray-500">Find what you need with advanced filters, bulk actions, and quick views.</dd> -->
+						</div>
+
+						<div class="relative">
+						<dt>
+							<!-- Heroicon name: outline/check -->
+							<svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<p class="ml-9 text-lg leading-6 font-medium text-gray-900">Boot reiniging</p>
+						</dt>
+						<!-- <dd class="mt-2 ml-9 text-base text-gray-500">Find what you need with advanced filters, bulk actions, and quick views.</dd> -->
+						</div>
+
+						<div class="relative">
+						<dt>
+							<!-- Heroicon name: outline/check -->
+							<svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+							</svg>
+							<p class="ml-9 text-lg leading-6 font-medium text-gray-900">Impregeneren</p>
+						</dt>
+						<!-- <dd class="mt-2 ml-9 text-base text-gray-500">Find what you need with advanced filters, bulk actions, and quick views.</dd> -->
+						</div>
+					</dl>
+				</section>
+				<section id="about" class="px-2 sm:px-12 py-12 w-screen flex items-center">
+					<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col-reverse sm:flex-row items-center justify-between">
+					   <div class="ggr grid grid-cols-2 gap-4 pt-12 sm:pt-0">
+							<style>
+								.ggr > img {
+									width: 16rem;
+									height: 12.5rem;
+									object-fit: cover;
+									border-radius: 1rem;
+								}
+							</style>
+							<img src="./Assets/kwast_binnen.jpeg" alt="">
+							<img src="./Assets/schoon.jpeg" alt="">
+							<img src="./Assets/interieur.jpeg" alt="">
+							<img src="./Assets/schuime.jpeg" alt="">
+							<img src="./Assets/cleaning-2022.jpeg" alt="">
+							<img src="./Assets/stoom.jpeg" alt="">
+					   </div>
+					   <div class="sm:w-1/2 leading-normal">
+							<h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Het verhaal achter</h2>
+							<p class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Stream and Brush Cleaning</p>
+							<p class="mt-4 text-lg tracking-tight text-slate-700 leading-relaxed">
+								Mijn naam is Juve, allround cleaner/auto detailer en oprichter van Steam & Brush Cleaning Services. 
+								Mijn vader gaf mij me eerste (auto)spons op 9-jarige leeftijd en sindsdien is het verzorgen van auto’s met ‘de paplepel ingegoten’.
+								<br><br>
+								Wij vinden het erg belangrijk dat onze klanten tevreden zijn over onze diensten. In onze dienstverlening streven wij er dan ook naar om 
+								uw verwachtingen te overtreffen, zodat u als klant net zo enthousiast zal zijn als hoe wij ervan genieten om onze diensten aan u te leveren.
+								<br><br>
+								Wij zijn een klein maar gemotiveerd familiebedrijf uit Rotterdam met grote dromen, gespecialiseerd in het verzorgen van auto’s en meubels. 
+								Wij geloven dat een schone (leef)omgeving een recht is en geen luxe. Daarom streven wij ernaar om ijverig en innovatief te zijn. 
+								Onze klanten zijn onze topprioriteit en via onze dienstverlening werken wij er hard aan om langdurige en betekenisvolle relaties op te bouwen. 
+								Ons team bestaat uit enthousiaste en gemotiveerde medewerkers met passie voor het vak. Zo dragen wij gezamenlijk ons steentje bij aan het succes 
+								van Steam & Brush Cleaning Services.
+							</p>
+					   </div>
+					</div>
+				</section>
+				<section id="pricing" class="relative pt-20 pb-12 text-gray-800">
+					<div class="container px-5 sm:pr-9 mx-auto">
+						<div class="mx-auto max-w-2xl md:text-center">
+							<h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Een overzicht van alle prijzen.</h2>
+							<p class="mt-4 text-lg tracking-tight text-slate-700">
+								Alle prijzen zijn gebasseerd op normaal ‘gebruikers- vuil’, exclusief reiskosten en btw. Prijs in overleg voor het verwijderen van hondenharen.
+								Voor een opdracht of meer informatie neem gerust contact met ons op.
+							</p>
+						</div>
+					   <div class="py-8 mt-12 overflow-x-auto overflow-y-hidden">
+						  <table class="table-auto w-full mb-10">
+							 <thead>
+								<tr class="font-display text-lg text-left tracking-tight text-slate-900">
+								   <th class="pb-6">Formaat</th>
+								   <th class="pb-6 pr-8">Interieur</th>
+								   <th class="pb-6 pr-8">Exterieur</th>
+								   <th class="pb-6 pr-8">Prijs</th>
+								</tr>
+							 </thead>
+							 <tbody class="tracking-tight text-slate-700">
+								<tr class="font-display text-lg text-left tracking-tight text-slate-900">
+								   <td class="py-5 pl-4 sm:pl-10 text-left">Auto</td>
+								   <td>
+									  <svg width="16" height="2" viewbox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+										 <line y1="1.35" x2="16" y2="1.35" stroke="#333" stroke-width="1.3"></line>
+									  </svg>
+								   </td>
+								   <td>
+									  <svg width="20" height="16" viewbox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										 <path d="M6.81671 15.0418L0 8.2251L0.90027 7.32483L6.81671 13.2413L19.0997 0.958252L20 1.85852L6.81671 15.0418Z" fill="green"></path>
+									  </svg>
+								   </td>
+								   <td>vanaf €60</td>
+								</tr>
+								<tr class="font-display text-lg text-left tracking-tight text-slate-900 bg-gray-100">
+									<td class="py-5 pl-4 sm:pl-10 text-left">Auto</td>
+								   <td>
+									  <svg width="20" height="16" viewbox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										 <path d="M6.81671 15.0418L0 8.2251L0.90027 7.32483L6.81671 13.2413L19.0997 0.958252L20 1.85852L6.81671 15.0418Z" fill="green"></path>
+									  </svg>
+								   </td>
+								   <td>
+									  <svg width="16" height="2" viewbox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+										 <line y1="1.35" x2="16" y2="1.35" stroke="#333" stroke-width="1.3"></line>
+									  </svg>
+								   </td>
+								   <td className="text-gray-600">vanaf €70</td>
+								</tr>
+								<tr class="font-display text-lg text-left tracking-tight text-slate-900">
+									<td class="py-5 pl-4 sm:pl-10 text-left">Auto</td>
+								   <td>
+									  <svg width="20" height="16" viewbox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										 <path d="M6.81671 15.0418L0 8.2251L0.90027 7.32483L6.81671 13.2413L19.0997 0.958252L20 1.85852L6.81671 15.0418Z" fill="green"></path>
+									  </svg>
+								   </td>
+								   <td>
+									  <svg width="20" height="16" viewbox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										 <path d="M6.81671 15.0418L0 8.2251L0.90027 7.32483L6.81671 13.2413L19.0997 0.958252L20 1.85852L6.81671 15.0418Z" fill="green"></path>
+									  </svg>
+								   </td>
+								   <td>vanaf €100</td>
+								</tr>
+								<tr class="font-display text-lg text-left tracking-tight text-slate-900 bg-gray-100">
+									<td class="py-5 pl-4 sm:pl-10 text-left">Diepte reiniging auto bekleding</td>
+								   <td>
+								   </td>
+								   <td>
+								   </td>
+								   <td>€75</td>
+								</tr>
+								<tr class="font-display text-lg text-left tracking-tight text-slate-900">
+									<td class="py-5 pl-4 sm:pl-10 text-left">Tuin</td>
+								   <td>
+								   </td>
+								   <td>
+								   </td>
+								   <td>vanaf €50</td>
+								</tr>
+								<tr class="font-display text-lg text-left tracking-tight text-slate-900 bg-gray-100">
+									<td class="py-5 pl-4 sm:pl-10 text-left">Balkon</td>
+								   <td>
+								   </td>
+								   <td>
+								   </td>
+								   <td>vanaf €25</td>
+								</tr>
+								<tr class="font-display text-lg text-left tracking-tight text-slate-900">
+									<td class="py-5 pl-4 sm:pl-10 text-left">Meubels / Fauteuil</td>
+								   <td>
+								   </td>
+								   <td>
+								   </td>
+								   <td>vanaf €25</td>
+								</tr>
+							 </tbody>
+						  </table>
+					   </div>
+					</div>
+				</section>
+				<section id="testimonials" aria-label="What our customers are saying" class="bg-slate-50 pb-20">
+					<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+						<div class="mx-auto max-w-2xl md:text-center">
+							<h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">De klant staat altijd op nummer 1 bij ons.</h2>
+							<p class="mt-4 text-lg tracking-tight text-slate-700">
+								Er is niks belangrijker dan het vertrouwen van de klant. Wij zorgen er ook voor dat we onze klanten met een goed gevoel naar huis kunnen gaan.
+							</p>
+						</div>
+						<ul role="list" class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
+							<li>
+								<ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+									<li>
+										<figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+											<blockquote class="relative">
+												<p class="text-md tracking-tight text-slate-900">
+													Goede en professionele service. De auto is ook gewaxt en heeft mooie 
+													beschermlaag waardoor de regen er zo van afdruipt. Superblij mee!
+												</p>
+											</blockquote>
+											<figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+												<div>
+													<div class="font-display text-base text-slate-900">Rushean</div>
+													<div class="mt-1 text-sm text-slate-500">19 Maart 2022</div>
+												</div>
+											</figcaption>
+										</figure>
+									</li>
+									<li>
+										<figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+											<blockquote class="relative">
+												<p class="text-md tracking-tight text-slate-900">
+													Na een ongelukje in de auto kon ik na 1 uurtje gelijk een 
+													afspraak maken, ondanks dat het al wat laat was. Mijn auto was weer schoon en fris, 
+													ik ben zeer tevreden.
+												</p>
+											</blockquote>
+											<figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+												<div>
+													<div class="font-display text-base text-slate-900">Ludmina</div>
+													<div class="mt-1 text-sm text-slate-500">12 Juni 2022</div>
+												</div>
+											</figcaption>
+										</figure>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+									<li>
+										<figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+											<blockquote class="relative">
+												<p class="text-md tracking-tight text-slate-900">
+													Clean and Brush heeft mij verwachtingen overtroffen, 
+													en hiermee mijn zoektocht naar de perfecte car cleaning service beëindigd. 
+													Heldere afspraken, uitstekende servicie en schitterende resultaten!
+												</p>
+											</blockquote>
+											<figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+												<div>
+													<div class="font-display text-base text-slate-900">Fred R.</div>
+													<div class="mt-1 text-sm text-slate-500">15 September 2022</div>
+												</div>
+											</figcaption>
+										</figure>
+									</li>
+									<li>
+										<figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+											<blockquote class="relative">
+												<p class="text-md tracking-tight text-slate-900">
+													Nu al een aantal auto’s bij sb detailing laten schoon maken de kwaliteit is altijd zeer hoog net zo als de service. 
+													Is je auto vies breng deze dan zeker langs bij deze heren dan herken je je auto niet meer terug omdat deze zo schoon is.
+												</p>
+											</blockquote>
+											<figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+												<div>
+													<div class="font-display text-base text-slate-900">Pascal</div>
+													<div class="mt-1 text-sm text-slate-500">14 September 2022</div>
+												</div>
+											</figcaption>
+										</figure>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<ul role="list" class="flex flex-col gap-y-6 sm:gap-y-8">
+									<li>
+										<figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+											<blockquote class="relative">
+												<p class="text-md tracking-tight text-slate-900">
+													Juve, top hoe je mijn auto hebt gepoetst en gecleand. Zo tevreden met het resultaat, 
+													als nieuw mijn bekleding en interieur. De beste tot nu heel blij , 
+													schoon en ruikt weer als nieuw
+												</p>
+											</blockquote>
+											<figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+												<div>
+													<div class="font-display text-base text-slate-900">Maureen</div>
+													<div class="mt-1 text-sm text-slate-500">25 Februari 2022</div>
+												</div>
+											</figcaption>
+										</figure>
+									</li>
+									<li>
+										<figure class="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
+											<blockquote class="relative">
+												<p class="text-md tracking-tight text-slate-900">
+													Top service! Alles wordt schoongemaakt, zelfs op plekken dat jij niet verwacht. Blij met het eindresultaat.
+												</p>
+											</blockquote>
+											<figcaption class="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+												<div>
+													<div class="font-display text-base text-slate-900">Nordin</div>
+													<div class="mt-1 text-sm text-slate-500">25 Februari 2022</div>
+												</div>
+											</figcaption>
+										</figure>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section id="faq" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+					<div class="mx-auto grid max-w-[40rem] grid-cols-1 gap-y-16 gap-x-14 lg:max-w-none lg:grid-cols-12">
+						<div class="lg:col-span-4">
+							<h2 class="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">Veel gestelde vragen</h2>
+							<p class="mt-4 text-lg tracking-tight text-slate-700">
+								Mocht het nog niet duidelijk zijn waar wij voor staan? Wij hebben een verzameling gemaakt van de meest gestelde vragen
+								van klanten en passen deze regelmatig aan.
+							</p>
+						</div>
+						<div class="-mb-4 space-y-12 lg:col-span-8 xl:col-span-7 xl:col-start-6">
+							<section>
+								<h3 class="text-sm font-semibold leading-7 text-slate-400">Detailing</h3>
+								<dl class="mt-2 divide-y divide-slate-100">
+									<details class="group py-4 marker:content-['']">
+										<summary class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+											Wat is detailing?
+											<svg class="mt-0.5 ml-4 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M18 12H6"></path>
+												<path class="group-open:hidden" d="M12 6v12"></path>
+											</svg>
+										</summary>
+										<div class="pt-6 pb-6">
+											<div class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-blue-600 hover:prose-a:text-blue-500">
+												<p>
+													Onze detailing of ‘lakverbeteringskunsten’ wordt beschreven als het ‘perfecte huwelijk tussen wetenschap en kunst’. Detailen is het minutieus herstellen van glans en reflectie van de autolak. Door onze vaardigheden in het corrigeren en verwijderen van lakdefecten, zoals hologrammen en (was)krassen zijn we in staat oude lak te renoveren of op te knappen of om de huidige lak te verbeteren tot ver buiten de mogelijkheden die de autofabrikant biedt. Uw auto ziet er daardoor weer beter als nieuw uit.
+												</p>
+											</div>
+										</div>
+									</details>
+									<details class="group py-4 marker:content-['']">
+										<summary class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+											Hoe werkt stoomreiniging?
+											<svg class="mt-0.5 ml-4 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M18 12H6"></path>
+												<path class="group-open:hidden" d="M12 6v12"></path>
+											</svg>
+										</summary>
+										<div class="pt-6 pb-6">
+											<div class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+												<p>
+													Stoomreiniging is een reinigingsmethode waarbij water aan de kook wordt gebracht in een afgesloten boiler. Stoom verlaat onder druk het zogenoemde pistool en heeft hierbij een temperatuur van net onder de 100°C.
+													Door deze hoge temperatuur kan je dieptereiniging toepassen. Het doodt tot 99,9% van de bacteriën en virussen (COVID). Met stoom bereik je de dieperliggende plekken en poriën. Hierdoor verwijder je gemakkelijker dan met traditionele reinigingsmethoden vervuiling zoals voedselresten, melkpoeder, olie, vet, lijm, hars, inkt of koolstof. 
+													<br><br>
+													Met stoomreiniging bespaar je ook tot 80% op water en reinigingsmiddelen. 
+												</p>
+											</div>
+										</div>
+									</details>
+									<details class="group py-4 marker:content-['']">
+										<summary class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+											Wat is een dieptereiniging van het interieur van een auto?
+											<svg class="mt-0.5 ml-4 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M18 12H6"></path>
+												<path class="group-open:hidden" d="M12 6v12"></path>
+											</svg>
+										</summary>
+										<div class="pt-6 pb-6">
+											<div class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+												<p>
+													Met een dieptereiniging wordt het interieur van uw auto volledig onder handen genomen. Met behulp van een extractor worden zelfs de meest hardnekkige vlekken uit de stoelen en bekleding van uw auto verwijderd. 
+													<br><br>
+													Eet u wel eens achter het stuur? Neemt u huisdieren mee in de auto? Of stapt u wel eens met vuile werkkleding in de auto? Dan is de kans groot dat uw stoelen hardnekkige vlekken bevatten. Met onze gespecialiseerde apparatuur verwijderen wij al het vuil, de vlekken en haren van uw autostoelen. Maar ook het tapijt, de matten en de bekleding van uw kofferbak kunnen we grondig reinigen met onze dieptereinigingsmethode.
+												</p>	
+											</div>
+										</div>
+									</details>
+									<details class="group py-4 marker:content-['']">
+										<summary class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+											Wat is het verschil tussen een auto poetsen en het detailen van een auto?
+											<svg class="mt-0.5 ml-4 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M18 12H6"></path>
+												<path class="group-open:hidden" d="M12 6v12"></path>
+											</svg>
+										</summary>
+										<div class="pt-6 pb-6">
+											<div class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+												<p>
+													Alle hoekjes en kantjes worden letterlijk tot in de details aangepakt. Zowel het interieur als het exterieur kan worden behandeld.
+													Het verschil met het poetsen van een auto en het detailen van een auto zit hem in de diepgang van het proces. Bij het detailen van een auto ga je voor meer dan oppervlakkige reiniging, zodat de auto terug gaat naar originele staat. 
+													<br><br>
+													Tijdens een professionele wasbeurt gebruiken wij de "twee emmer methode". 
+													Deze methode zorgt ervoor dat je tijdens het wassen geen kleine krasjes veroorzaakt. Dit soort kleine krasjes heten "swirls". Swirls zorgen ervoor dat je lak in de loop van de tijd dof oogt. 
+													<br><br> Stap 1: Velgen en wielen.  We starten altijd met het wassen van de wielen en de banden, aangezien dit het deel van de auto is waar het meeste vuil ophoopt. Het belangrijkste hierbij is dat we de producten die we voor de wielen en de banden gebruiken niet op de rest van de auto gebruiken, om krassen te voorkomen. (Denk hierbij aan was-emmers,  sponzen, microvezel washand, velgborstel, detailborstel en reinigers.)
+													<br><br> Stap 2: Voorwas/Snowfoam  Het doel van deze stap is het verwijderen van zo veel mogelijk zand en wegvuil van de auto. Hoe meer vuil er van de auto verwijderd is voor het wassen, hoe minder kans er op waskrassen is. Het begint met het afspoelen van de wagen. (We gebruiken een hoge-drukreiniger met speciaal ontworpen nozzle voor het afspuiten van autolak) De volgende stap is het aanbrengen van een laag snowfoam met een snowfoam-lans. Dit is een bepaald soort shampoo die PH-neutraal is. Deze shampoo zorgt ervoor dat vuiligheid losweekt van de lak. 
+													<br><br> Stap 3: Wassen.Tijdens het wassen gebruiken we twee emmers. Één voor het wassen van de auto, één voor het reinigen van de washanden. Dit is nodig om te voorkomen dat je de vuiligheid die je eraf haalt terug de lak in wrijft, om swirls te voorkomen. We gebruiken hierbij altijd een PH-neutrale shampoo, zodat je nooit een keramische coating of andere beschermende laag op de lak niet beschadigd. Er wordt altijd van de bovenkant naar de onderkant van de auto gewerkt, aangezien de onderkant van de auto het meest vuil is. 
+													<br><br> Stap 4: Drogen.Na het wassen van de auto moet de auto gedroogd worden.Dit doe je met een zachte microvezel handdoek. Het drogen van de auto is noodzakelijk om ervoor te zorgen dat kalkresten in het water aan de lak hechten. (Wanneer er kalkresten aan de lak hechten krijgt u witte vlekken op de lak en/of ruiten)
+													<br><br> Stap 5: Bescherming. Nadat de auto gewassen en gedroogd is, willen we dat de lak zijn glans voor een lange tijd behoudt en beschermd is tegen invloeden van buitenaf (UV-straling, zure regen etc..).De beschermlaag die we toevoegen is bedoeld om de waxlaag of keramische coating een langere levensduur te geven.
+												</p>
+											</div>
+										</div>
+									</details>
+									<details class="group py-4 marker:content-['']">
+										<summary class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+											Wat is polijsten?
+											<svg class="mt-0.5 ml-4 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M18 12H6"></path>
+												<path class="group-open:hidden" d="M12 6v12"></path>
+											</svg>
+										</summary>
+										<div class="pt-6 pb-6">
+											<div class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+												<p>
+													Om polijsten goed uit te leggen, is het belangrijk om eerst te begrijpen hoe de laklaag van een auto is opgebouwd.
+													en primer wordt aangebracht op de panelen van de auto. Hierover wordt de gekleurde lak gespoten. Deze kleurlaag geeft de auto zijn kleur. Een transparante, beschermende laklaag wordt hierover aangebracht. deze toplaag heet de blanke laklaag genoemd. 
+													<br><br>
+													Polijsten heeft een aantal stappen. Er wordt een verschil gemaakt tussen 'grof polijsten' en 'fijn polijsten'. hierbij kan er een vergelijking worden gemaakt met het schuren van een product. Tijdens het 'grof polijsten' zorg je ervoor dat de wat diepere krassen in de blanke laklaag ruwer worden gemaakt en vervolgens worden verwijderd (zie deze stap als het schuren met een grove korrel). 
+													<br><br>
+													Vervolgens wil je ervoor zorgen dat de blanke laklaag zo glad mogelijk is, om maximale glans te krijgen. Dit doe je tijdens het 'fijn polijsten'. Er wordt dan een veel zachtere polijstpasta en zachtere polijstpad gebruikt (zie dit als het schuren met een hele fijne korrel). 
+													<br><br>
+													Na het polijsten van de auto, wil je dat de blanke laklaag beschermd wordt. Dit doe je ofwel met een waxlaag (gemiddelde beschermtijd 3 maanden), met een spray sealant (gemiddelde beschermtijd 6 maanden) of met een keramische coating (beschermtijd afhankelijk van de coating tussen de 2 en 5 jaar)
+												</p>
+											</div>
+										</div>
+									</details>
+									<details class="group py-4 marker:content-['']">
+										<summary class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+											Wat is keramische coating?
+											<svg class="mt-0.5 ml-4 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M18 12H6"></path>
+												<path class="group-open:hidden" d="M12 6v12"></path>
+											</svg>
+										</summary>
+										<div class="pt-6 pb-6">
+											<div class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+												<p>
+													Keramische coating, ook wel glascoating genoemd, vormt een extra harde toplaag over de bestaande laklagen van de auto. Deze laag hecht zich aan de blanke lak en zorgt er niet alleen voor dat je auto langer blijft glanzen, maar zorgt er ook voor dat hij meer krasbestendig is, maar ook hydrofoob (waardoor er minder snel vuil aan kan hechten). 
+													De gemiddelde levensduur van een coating met het juiste onderhoud is ongeveer drie jaar (afhankelijk van welke coating er gebruikt wordt). Dit is veel langer dan een traditionele waxlaag (gemiddeld 3 maanden). 
+													<br><br>
+													De volgende condities bepalen tevens hoe lang een keramische coating goed blijft:
+													<br><br>
+													- Hoe de auto gewassen wordt en met wat. <br>
+													- Hoeveel er met de auto gereden wordt. <br>
+													- Of de auto binnen of buiten gestald wordt.
+													<br><br>
+													Voordat een keramische coating aangebracht kan worden moet de blanke laklaag eronder helemaal glad zijn, dit doe je door te polijsten. Dit is nodig om de maximale glans te krijgen.	
+												</p>
+											</div>
+										</div>
+									</details>
+								</dl>
+							</section>
+							<section>
+								<h3 class="text-sm font-semibold leading-7 text-slate-400">Overig</h3>
+								<dl class="mt-2 divide-y divide-slate-100">
+									<details class="group py-4 marker:content-['']">
+										<summary class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+											Ik heb meer vragen, hoe kan ik jullie het best bereiken?
+											<svg class="mt-0.5 ml-4 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+												<path d="M18 12H6"></path>
+												<path class="group-open:hidden" d="M12 6v12"></path>
+											</svg>
+										</summary>
+										<div class="pt-6 pb-6">
+											<div class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+												<p>
+													Het beste kunt u ons per e-mail bereiken, heeft u urgente vragen kunt u ons ook bellen of whatsappen.
+												</p>
+											</div>
+										</div>
+									</details>
+								</dl>
+							</section>
+						</div>
+					</div>
+				</section>
+				<section id="contact" class="py-20">
+					<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					   <div class="relative bg-white shadow-md rounded-lg">
+						  <h2 class="sr-only">Contact us</h2>
+						  <div class="grid grid-cols-1 lg:grid-cols-3">
+							 <div class="relative overflow-hidden py-10 px-6 bg-blue-700 rounded-lg sm:px-10 xl:p-12">
+								<div class="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
+								   <svg
+									  class="absolute inset-0 w-full h-full"
+									  width=343
+									  height=388
+									  viewBox="0 0 343 388"
+									  fill="none"
+									  preserveAspectRatio="xMidYMid slice"
+									  xmlns="http://www.w3.org/2000/svg"
+									  >
+									  <path
+										 d="M-99 461.107L608.107-246l707.103 707.107-707.103 707.103L-99 461.107z"
+										 fill="rgba(255,255,255, 0.15)"
+										 />
+									  <defs>
+										 <linearGradient
+											id="linear1"
+											x1="254.553"
+											y1="107.554"
+											x2="961.66"
+											y2="814.66"
+											gradientUnits="userSpaceOnUse"
+											>
+											<stop stopColor="#fff" />
+											<stop offset=1 stopColor="#fff" stopOpacity=0 />
+										 </linearGradient>
+									  </defs>
+								   </svg>
+								</div>
+								<div
+								   class="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none sm:block lg:hidden"
+								   aria-hidden="true"
+								   >
+								   <svg
+									  class="absolute inset-0 w-full h-full"
+									  width=359
+									  height=339
+									  viewBox="0 0 359 339"
+									  fill="none"
+									  preserveAspectRatio="xMidYMid slice"
+									  xmlns="http://www.w3.org/2000/svg"
+									  >
+									  <path
+										 d="M-161 382.107L546.107-325l707.103 707.107-707.103 707.103L-161 382.107z"
+										 fill="rgba(255,255,255, 0.15)"
+										 />
+									  <defs>
+										 <linearGradient
+											id="linear2"
+											x1="192.553"
+											y1="28.553"
+											x2="899.66"
+											y2="735.66"
+											gradientUnits="userSpaceOnUse"
+											>
+											<stop stopColor="#fff" />
+											<stop offset=1 stopColor="#fff" stopOpacity=0 />
+										 </linearGradient>
+									  </defs>
+								   </svg>
+								</div>
+								<div
+								   class="hidden absolute top-0 right-0 bottom-0 w-1/2 pointer-events-none lg:block"
+								   aria-hidden="true"
+								   >
+								   <svg
+									  class="absolute inset-0 w-full h-full"
+									  width=160
+									  height=678
+									  viewBox="0 0 160 678"
+									  fill="none"
+									  preserveAspectRatio="xMidYMid slice"
+									  xmlns="http://www.w3.org/2000/svg"
+									  >
+									  <path
+										 d="M-161 679.107L546.107-28l707.103 707.107-707.103 707.103L-161 679.107z"
+										 fill="rgba(255,255,255, 0.15)"
+										 />
+									  <defs>
+										 <linearGradient
+											id="linear3"
+											x1="192.553"
+											y1="325.553"
+											x2="899.66"
+											y2="1032.66"
+											gradientUnits="userSpaceOnUse"
+											>
+											<stop stopColor="#fff" />
+											<stop offset=1 stopColor="#fff" stopOpacity=0 />
+										 </linearGradient>
+									  </defs>
+								   </svg>
+								</div>
+								<h3 class="text-lg font-medium text-white">Contact info</h3>
+								<p class="mt-6 text-base text-blue-50 max-w-3xl">
+								   Heeft u nog vragen of wilt u een afspraak maken? Neem gerust contact met ons op:
+								</p>
+								<dl class="mt-8 space-y-6">
+								   <dt>
+									  <span class="sr-only">Telefoon nummer</span>
+								   </dt>
+								   <dd class="flex text-base text-blue-50">
+									  <svg class="flex-shrink-0 w-6 h-6 text-blue-200" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+									  <span class="ml-3">+31 6 24 15 63 96</span>
+								   </dd>
+								   <dt>
+									  <span class="sr-only">Email</span>
+								   </dt>
+								   <dd class="flex text-base text-blue-50">
+									  <svg class="flex-shrink-0 w-6 h-6 text-blue-200" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+									  <span class="ml-3">info@sbcleaning.nl</span>
+								   </dd>
+								</dl>
+							 </div>
+							 <div class="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
+								<h3 class="text-lg font-medium text-gray-900">Stuur ons een bericht</h3>
+								<form action="https://formspree.io/f/mleznzze" enctype="multipart/form-data" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+								   <div>
+									  <label htmlFor="first-name" class="block text-sm font-medium text-gray-900">
+									  Naam
+									  </label>
+									  <div class="mt-1">
+										 <input
+											type="text"
+											name="name"
+											id="first-name"
+											autoComplete="given-name"
+											class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+											/>
+									  </div>
+								   </div>
+								   <div>
+									  <label htmlFor="last-name" class="block text-sm font-medium text-gray-900">
+									  Telefoon nummer
+									  </label>
+									  <div class="mt-1">
+										 <input
+											type="text"
+											name="tel_nr"
+											id="last-name"
+											autoComplete="family-name"
+											class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+											/>
+									  </div>
+								   </div>
+								   <div>
+									  <label htmlFor="email" class="block text-sm font-medium text-gray-900">
+									  Email
+									  </label>
+									  <div class="mt-1">
+										 <input
+											id="email"
+											name="email"
+											type="email"
+											autoComplete="email"
+											class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+											/>
+									  </div>
+								   </div>
+								   <div class="sm:col-span-2">
+									  <div class="flex justify-between">
+										 <label htmlFor="message" class="block text-sm font-medium text-gray-900">
+										 Bericht
+										 </label>
+										 <span id="message-max" class="text-sm text-gray-500">
+										 Max. 500 characters
+										 </span>
+									  </div>
+									  <div class="mt-1">
+										 <textarea
+											id="message"
+											name="message"
+											rows=4
+											class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 border border-gray-300 rounded-md"
+											aria-describedby="message-max"
+											defaultValue=''
+											></textarea>
+									  </div>
+								   </div>
+								   <div class="sm:col-span-2">
+									  <label htmlFor="subject" class="block text-sm font-medium text-gray-900">
+									  Extra informatie
+									  </label>
+									  <div class="mt-1">
+										 <input class="form-control
+											block
+											w-full
+											px-3
+											py-1.5
+											text-base
+											font-normal
+											text-gray-700
+											bg-white bg-clip-padding
+											border border-solid border-gray-300
+											rounded
+											transition
+											ease-in-out
+											m-0
+											focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" accept="image/png, image/jpeg" type="file" id="formFile" multiple />
+										 <small>* Om u zo goed mogelijk te kunnen helpen vragen wij om foto's van uw auto. tuin of bank.</small>
+									  </div>
+								   </div>
+								   <div class="sm:col-span-2 sm:flex sm:justify-end">
+									  <button
+									  	type="submit"
+										class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600"
+										href="/register"
+										>
+										<span>Verzend</span>
+									  </button>
+								   </div>
+								</form>
+							 </div>
+						  </div>
+					   </div>
+					</div>
+				</section>
+				<div class="mt-16 sm:mt-32">
+					<div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
+							<img
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								src="./Assets/kwast_binnen.jpeg"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+							/>
+						</div>
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl -rotate-2">
+							<img
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								src="./Assets/schoon.jpeg"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+							/>
+						</div>
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
+							<video 
+								src="./Assets/lp_video.mp4"
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+								autoplay
+								muted
+								loop>
+							</video>
+						</div>
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2">
+							<img
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								src="./Assets/kwast.jpeg"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+							/>
+						</div>
+						<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl -rotate-2">
+							<img
+								alt=""
+								sizes="(min-width: 640px) 18rem, 11rem"
+								src="./Assets/cleaning-2022.jpeg"
+								width="3744"
+								height="5616"
+								decoding="async"
+								data-nimg="future"
+								class="absolute inset-0 h-full w-full object-cover"
+								loading="lazy"
+								style="color:transparent"
+							/>
+						</div>
+					</div>
+				</div>				
+			</main>
+			<footer class="bg-slate-50 mt-12">
+				<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<div class="py-8 flex flex-col items-center">
+						<img class="w-52" src="./Assets/logo.png" alt="">
+						<nav class="mt-4 text-sm" aria-label="quick links">
+							<div class="-my-1 flex justify-center gap-x-6">
+								<a class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#services">Services</a>
+								<a class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#about">Over ons</a>
+								<a class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#pricing">Tarieven</a>
+								<a class="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="/#faq">FAQ</a>
+							</div>
+						</nav>
+					</div>
+					<div class="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
+						<div class="flex gap-x-6">
+							<a class="group" aria-label="SB Cleaning on Instagram" href="https://instagram.com/steam_and_brush">
+								<svg class="h-6 w-6 fill-slate-500 group-hover:fill-slate-700" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+									<path d="M512 306.9c-113.5 0-205.1 91.6-205.1 205.1S398.5 717.1 512 717.1 717.1 625.5 717.1 512 625.5 306.9 512 306.9zm0 338.4c-73.4 0-133.3-59.9-133.3-133.3S438.6 378.7 512 378.7 645.3 438.6 645.3 512 585.4 645.3 512 645.3zm213.5-394.6c-26.5 0-47.9 21.4-47.9 47.9s21.4 47.9 47.9 47.9 47.9-21.3 47.9-47.9a47.84 47.84 0 0 0-47.9-47.9zM911.8 512c0-55.2.5-109.9-2.6-165-3.1-64-17.7-120.8-64.5-167.6-46.9-46.9-103.6-61.4-167.6-64.5-55.2-3.1-109.9-2.6-165-2.6-55.2 0-109.9-.5-165 2.6-64 3.1-120.8 17.7-167.6 64.5C132.6 226.3 118.1 283 115 347c-3.1 55.2-2.6 109.9-2.6 165s-.5 109.9 2.6 165c3.1 64 17.7 120.8 64.5 167.6 46.9 46.9 103.6 61.4 167.6 64.5 55.2 3.1 109.9 2.6 165 2.6 55.2 0 109.9.5 165-2.6 64-3.1 120.8-17.7 167.6-64.5 46.9-46.9 61.4-103.6 64.5-167.6 3.2-55.1 2.6-109.8 2.6-165zm-88 235.8c-7.3 18.2-16.1 31.8-30.2 45.8-14.1 14.1-27.6 22.9-45.8 30.2C695.2 844.7 570.3 840 512 840c-58.3 0-183.3 4.7-235.9-16.1-18.2-7.3-31.8-16.1-45.8-30.2-14.1-14.1-22.9-27.6-30.2-45.8C179.3 695.2 184 570.3 184 512c0-58.3-4.7-183.3 16.1-235.9 7.3-18.2 16.1-31.8 30.2-45.8s27.6-22.9 45.8-30.2C328.7 179.3 453.7 184 512 184s183.3-4.7 235.9 16.1c18.2 7.3 31.8 16.1 45.8 30.2 14.1 14.1 22.9 27.6 30.2 45.8C844.7 328.7 840 453.7 840 512c0 58.3 4.7 183.2-16.2 235.8z">
+									</path>
+								</svg>
+							</a>
+						</div>
+						<p class="mt-6 text-sm text-slate-500 sm:mt-0">
+							Made with ❤️ by Skopin.
+						</p>
+					</div>
+				</div>
+			</footer>			
+		</div>
+	</body>
+</html>
